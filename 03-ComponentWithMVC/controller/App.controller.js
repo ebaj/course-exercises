@@ -1,4 +1,3 @@
-jQuery.sap.declare("qmacro.controller.App");
 sap.ui.controller("qmacro.controller.App", {
 
 	onGreetingPress : function(oEvent) {
