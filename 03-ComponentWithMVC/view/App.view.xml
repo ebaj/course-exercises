@@ -1,0 +1,18 @@
+<mvc:View
+	controllerName="qmacro.controller.App"
+	xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true"
+	xmlns="sap.m">
+	<App>
+		<Page
+			title="Component with MVC">
+			<content>
+				<Input id="name"
+					placeholder="What is your name?" />
+				<Button
+					text="Greeting"
+					press="onGreetingPress" />
+			</content>
+		</Page>
+	</App>
+</mvc:View>
