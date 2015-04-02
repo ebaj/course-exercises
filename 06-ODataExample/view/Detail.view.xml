@@ -1,0 +1,89 @@
+<mvc:View
+	controllerName="qmacro.controller.Detail"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns="sap.m">
+	<Page id="page"
+		title="{i18n>DetailTitle}"
+		showNavButton="{device>/isPhone}"
+		navButtonPress="onBack">
+		<ObjectHeader
+			title="{ProductName}"
+			number="{
+				path : 'UnitPrice',
+				type : 'sap.ui.model.type.Float',
+				formatOptions : {
+					maxFractionDigits : 2
+				}
+			}"
+			numberUnit="USD" />
+		<IconTabBar>
+			<items>
+				<IconTabFilter
+					key="supplier"
+					binding="{Supplier}"
+					text="{i18n>iconTabFilterSupplier}"
+					icon="sap-icon://supplier">
+					<content>
+						<l:Grid
+							defaultSpan="L12 M12 S12"
+							width="auto">
+							<l:content>
+								<f:SimpleForm
+									minWidth="1024"
+									maxContainerCols="2"
+									editable="false"
+									layout="ResponsiveGridLayout"
+									title="{i18n>supplierAddress}"
+									labelSpanL="3"
+									emptySpanL="4"
+									columnsL="1">
+									<f:content>
+										<Label text="{i18n>supplierAddressName}" />
+										<Text text="{CompanyName}" />
+										<Label text="{i18n>supplierAddressStreet}" />
+										<Text text="{Address}" />
+										<Label text="{i18n>supplierAddressCity}" />
+										<Text text="{City}" />
+										<Label text="{i18n>supplierAddressZIPCode}" />
+										<Text text="{PostalCode}" />
+										<Label text="{i18n>supplierAddressCountry}" />
+										<Text text="{Country}" />
+									</f:content>
+								</f:SimpleForm>
+							</l:content>
+						</l:Grid>
+					</content>
+				</IconTabFilter>
+				<IconTabFilter
+					key="category"
+					binding="{Category}"
+					text="{i18n>iconTabFilterCategory}"
+					icon="sap-icon://hint">
+					<content>
+						<f:SimpleForm
+							minWidth="1024"
+							maxContainerCols="2"
+							editable="false"
+							layout="ResponsiveGridLayout"
+							title="{i18n>categoryInfo}"
+							labelSpanL="3"
+							emptySpanL="4"
+							columnsL="1">
+							<f:content>
+								<Label text="{i18n>categoryName}" />
+								<Text text="{CategoryName}" />
+								<Label text="{i18n>categoryDescription}" />
+								<Text text="{Description}" />
+							</f:content>
+						</f:SimpleForm>
+					</content>
+				</IconTabFilter>
+			</items>
+		</IconTabBar>
+		<footer>
+			<Bar />
+		</footer>
+	</Page>
+</mvc:View>
